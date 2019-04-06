@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+    <title>Nobre - Reseteo de contraseña</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('staradmin/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('staradmin/vendors/css/vendor.bundle.base.css') }}">
@@ -28,7 +28,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('images') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('images/logos/black-logo.png') }}" alt="logo" class="img-responsive" />
                         </div>
                         <div class="card-body">
                             <p class="text-warning">Ingrese su email y le enviaremos un enlace para restaurar su contraseña.</p>
