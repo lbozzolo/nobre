@@ -54,7 +54,7 @@
 
             @empty
 
-                <span>No hay ninguna imagen para mosgrar</span>
+                <span>No hay ninguna imagen para mostrar</span>
 
             @endforelse
 

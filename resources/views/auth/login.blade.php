@@ -38,7 +38,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('images/logos/black-logo.png') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('template-web/images/logo2.png') }}" alt="logo" class="img-responsive" />
                         </div>
                         <div class="card-body">
                             <form action="{{ url('/login') }}" method="post">

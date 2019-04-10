@@ -102,8 +102,8 @@
 
             <div class="text-center">
                 <a class="boton"  href="">FUTURE</a>
-                <a class="boton" href="{{ route('pictures.present') }}">PRESENT</a>
-                <a class="boton" href="{{ route('pictures.past') }}">PAST</a>
+                <a class="boton" href="{{ route('pictures.present') }}" target="_blank">PRESENT</a>
+                <a class="boton" href="{{ route('pictures.past') }}" target="_blank">PAST</a>
             </div>
 
             {{--<ul class="port-filter clearboth clearfix">--}}

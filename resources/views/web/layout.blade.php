@@ -5,10 +5,8 @@
     </head>
     <body>
 
-
-
         <div id="preloader">
-            <div id="status"><img src="{{ asset('template-web/images/black-logo.png') }}" alt="cargando contenido.."></div>
+            <div id="status"><img src="{{ asset('template-web/images/logo2.png') }}" alt="cargando contenido.."></div>
         </div>
 
         <div id="home" class="clearfix">
