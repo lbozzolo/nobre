@@ -1,11 +1,20 @@
-<div class="form-group col-lg-6">
+<div class="form-group col-lg-4">
     {!! Form::label('title', 'Título:') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group col-lg-6">
+<div class="form-group col-lg-4">
+    {!! Form::label('year', 'Seleccione un año') !!}
+    {!! Form::text('year', null, ['class' => 'form-control datepicker', 'style' => 'height: 35px', 'autocomplete' => 'off']) !!}
+</div>
+{{--<div class="form-group col-lg-4">--}}
+    {{--{!! Form::label('year', 'Seleccione un año') !!}--}}
+    {{--{!! Form::select('year', $years, ( isset($item) && $item->year)? $item->year : null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
+
+<div class="form-group col-lg-4">
     {!! Form::label('active', 'Estado:') !!}
-    {!! Form::select('active', ['0' => 'Inactivo', '1' => 'Activo'], (isset($work))? $work->active : null, ['class' => 'form-control']) !!}
+    {!! Form::select('active', ['0' => 'Inactivo', '1' => 'Activo'], (isset($item))? $item->active : null, ['class' => 'form-control']) !!}
 </div>
 
 {{--<div class="form-group col-lg-6">--}}

@@ -1,10 +1,9 @@
 <table class="table datatables">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>#</th>
             <th>Título</th>
-            <th>Fecha</th>
-            <th>Tipo</th>
+            <th>Año</th>
             <th>Estado</th>
             <th>Opciones</th>
         </tr>
@@ -14,14 +13,7 @@
         <tr>
             <td>{!! $work->id !!}</td>
             <td>{!! $work->title !!}</td>
-            <td>{!! $work->fecha_creado !!}</td>
-            <td>
-                @if($work->type == 'past')
-                    <label class="badge badge-warning">pasado</label>
-                @else
-                    <label class="badge badge-primary">presente</label>
-                @endif
-            </td>
+            <td>{!! $work->year !!}</td>
             <td>
                 @if($work->active)
                     <label class="badge badge-success">activo</label>

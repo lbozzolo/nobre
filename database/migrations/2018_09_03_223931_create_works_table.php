@@ -20,6 +20,7 @@ class CreateWorksTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->integer('active')->nullable();
+            $table->string('year')->nullable();
 
             $table->index('id');
 

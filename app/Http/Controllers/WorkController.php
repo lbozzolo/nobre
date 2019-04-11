@@ -36,14 +36,13 @@ class WorkController extends AppBaseController
         $this->update_failure_message = 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado';
         $this->destroy_success_message = ucfirst($this->modelSpanish).' eliminado con éxito';
         $this->destroy_failure_message = 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado';
+
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $this->repo->pushCriteria(new RequestCriteria($request));
-        $items = $this->repo->all();
-
-        return view($this->modelPlural.'.index')->with($this->modelPlural, $items);
+        $data['works'] = $this->repo->all();
+        return view($this->modelPlural.'.index')->with($data);
     }
 
     public function create()
@@ -74,18 +73,20 @@ class WorkController extends AppBaseController
 
     public function edit($id)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $data['item'] = $this->repo->findWithoutFail($id);
 
-        if (empty($item))
+        if (empty($data['item']))
             return redirect()->back()->withErrors($this->show_failure_message);
 
-        return view($this->modelPlural.'.edit')->with($this->model, $item);
+        return view($this->modelPlural.'.edit')->with($data);
     }
 
     public function update($id, UpdateWorkRequest $request)
     {
         $item = $this->repo->findWithoutFail($id);
-        $items = $this->repo->all();
+        //$items = $this->repo->all();
+
+        $inputs = $request->all();
 
         if($request['active'] == 0)
             $request['active'] = 1;
@@ -93,17 +94,16 @@ class WorkController extends AppBaseController
         if (!$item)
             return redirect()->back()->withErrors($this->update_failure_message);
 
-        $item = $this->repo->update($request->all(), $id);
+        $item = $this->repo->update($inputs, $id);
 
-
-        if($item->active == 1){
-            foreach($items as $far){
-                $far->active = null;
-                $far->save();
-            }
-            $item->active = 1;
-            $item->save();
-        }
+//        if($item->active == 1){
+//            foreach($items as $far){
+//                $far->active = null;
+//                $far->save();
+//            }
+//            $item->active = 1;
+//            $item->save();
+//        }
 
         return redirect(route($this->modelPlural.'.index'))->with('ok', $this->update_success_message);
     }

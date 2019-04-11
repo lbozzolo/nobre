@@ -27,7 +27,8 @@ class Image extends Model
         'imageable_id',
         'imageable_type',
         'main',
-        'type'
+        'type',
+        'year'
     ];
 
     /**

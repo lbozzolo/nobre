@@ -45,6 +45,16 @@
             });
         });
 
+        $('.datepicker').datepicker({
+            format: "yyyy",
+            weekStart: 1,
+            orientation: "top auto",
+            keyboardNavigation: false,
+            viewMode: "years",
+            minViewMode: "years",
+            startDate: '2010'
+        });
+
     </script>
 
 @endsection

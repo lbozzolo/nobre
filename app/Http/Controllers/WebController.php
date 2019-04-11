@@ -2,6 +2,7 @@
 
 namespace Nobre\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use Nobre\Http\Controllers\AppBaseController as AppBaseController;
@@ -16,7 +17,6 @@ use Nobre\Models\Work;
 
 class WebController extends AppBaseController
 {
-
     public function index()
     {
         $data['slider'] = Slider::where('active', '1')->first();
@@ -45,9 +45,10 @@ class WebController extends AppBaseController
         return view('web.present')->with($data);
     }
 
-    public function works()
+    public function works($year = null)
     {
-        $data['works'] = Work::all();
+        $year = ($year)? $year : Carbon::now()->year;
+        $data['works'] = Work::with('images')->active()->where('year', '=', $year)->get();
 
         return view('web.works')->with($data);
     }

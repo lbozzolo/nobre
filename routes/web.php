@@ -39,7 +39,7 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@present'
     ]);
 
-    Route::get('/works', [
+    Route::get('/works/{year?}', [
         'as' => 'works',
         'uses' => 'WebController@works'
     ]);

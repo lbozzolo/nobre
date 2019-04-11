@@ -33,6 +33,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('medias', 'MediaController');
 
+    Route::post('medias/create', [
+        'as' => 'medias.create',
+        'uses' => 'MediaController@create'
+    ]);
+
     Route::get('medias/create/present', [
         'as' => 'medias.create.present',
         'uses' => 'MediaController@createPresent'
@@ -66,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'ImageController@saveJqueryImageUpload'
     ]);
 
-    Route::post('/{type}/demos/jquery-image-upload', [
+    Route::post('/{type}/{year}/without-model/jquery-image-upload', [
         'as' => 'subir.imagen.sin.modelo',
         'uses' => 'ImageController@saveWithoutModel'
     ]);

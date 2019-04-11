@@ -13,7 +13,8 @@ class Work extends Model
         'title',
         'body',
         'type',
-        'active'
+        'active',
+        'year'
     ];
 
     protected $casts = [
@@ -25,6 +26,10 @@ class Work extends Model
         'title' => 'required',
         'body' => 'required'
     ];
+
+    public function scopeActive($query) {
+        return $query->where('active', 1);
+    }
 
     public function getFechaCreadoAttribute()
     {
@@ -43,7 +48,7 @@ class Work extends Model
 
     public function mainImage()
     {
-        return $this->images()->where('main', 1)->first();
+        return $this->images()->where('thumbnail_id', '!=', null)->where('main', 1)->first();
     }
 
     public function imagesThumb()

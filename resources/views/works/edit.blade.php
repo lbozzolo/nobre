@@ -3,6 +3,9 @@
 @section('css')
     <style type="text/css">
         body .popover{display:none !important; }
+        .ui-datepicker-calendar {
+            display: none;
+        }​
     </style>
 @endsection
 
@@ -18,7 +21,7 @@
             <div class="row">
                 <div class="card-body">
 
-                    {!! Form::model($work, ['route' => ['works.update', $work->id], 'method' => 'patch']) !!}
+                    {!! Form::model($item, ['route' => ['works.update', $item->id], 'method' => 'patch']) !!}
 
                     <div class="row">
                     @include('works.fields')
@@ -60,6 +63,15 @@
             });
         });
 
+        $('.datepicker').datepicker({
+            format: "yyyy",
+            weekStart: 1,
+            orientation: "top auto",
+            keyboardNavigation: false,
+            viewMode: "years",
+            minViewMode: "years",
+            startDate: '2010'
+        });
 
     </script>
 

@@ -210,10 +210,10 @@ class ImageController extends AppBaseController
         return $nombre;
     }
 
-    public function makeThumb($img, $name, $model = null, $type = null)
+    public function makeThumb($img, $name, $model = null, $type = null, $year = null)
     {
         $img->save(public_path('/imagenes/'). 'thumb-'.$name);
-        $image_thumb = Image::create(['path' => 'thumb-'.$name, 'main' => 0, 'type' => $type ]);
+        $image_thumb = Image::create(['path' => 'thumb-'.$name, 'main' => 0, 'type' => $type, 'year' => $year ]);
 
         if($model)
             $model->images()->save($image_thumb);
@@ -224,6 +224,8 @@ class ImageController extends AppBaseController
     public function principalImage($id, $class, $image)
     {
         $imagen = Image::find($image);
+        $imagen_thumb = Image::find($imagen->thumbnail_id);
+
         $class = 'Nobre\Models\\'.$class;
         $model = $class::find($id);
 
@@ -233,7 +235,11 @@ class ImageController extends AppBaseController
         }
 
         $imagen->main = 1;
+        $imagen_thumb->main = 1;
+
         $imagen->save();
+        $imagen_thumb->save();
+
 
         return redirect()->back();
     }
@@ -294,7 +300,7 @@ class ImageController extends AppBaseController
         return response($status,200);
     }
 
-    public function saveWithoutModel(Request $request, $type)
+    public function saveWithoutModel(Request $request, $type, $year)
     {
         $validator = Validator::make($request->all(), ['img' => 'required|image|max:1024000']);
 
@@ -322,13 +328,13 @@ class ImageController extends AppBaseController
             // Confirma que el archivo no exista en el destino
             $nombre = $this->changeFileNameIfExists($file);
 
-            $imagen = Image::create(['path' => $nombre, 'main' => 0, 'type' => $type]);
+            $imagen = Image::create(['path' => $nombre, 'main' => 0, 'type' => $type, 'year' => $year]);
             $imagen->title = ($request->title)? $request->title : '';
             $file->move(public_path('imagenes'), $nombre);
 
-
-            $image_thumb = $this->makeThumb($img_thumb, $nombre, null, $type);
+            $image_thumb = $this->makeThumb($img_thumb, $nombre, null, $type, $year);
             $imagen->thumbnail_id = $image_thumb->id;
+
             $imagen->save();
 
             $status = "uploaded";

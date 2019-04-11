@@ -1,83 +1,86 @@
-@extends('web.layout')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Nobre Management - Agencia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Le styles -->
+    <link href="{{ asset('template-web/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/css/prettyPhoto.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/css/style.css') }}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic,600italic,600&amp;subset=latin,greek-ext,cyrillic-ext,greek,vietnamese,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-@section('css')
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="{{ asset('template-web/images/favicon.png') }}">
+</head>
 
-    <style type="text/css">
+<body>
 
-        .modal-dialog{
-            width: 57%;
-            text-align: center;
-        }
-        .modal-content{
-            display:inline-block;
-        }
-
-        @media (min-width:768px) {
-            .modal{
-                display:none;
-            }
-        }
-
-    </style>
-
-@endsection
-
-@section('content')
-
-
-    <!--WORKS START-->
-    <div id="social" class="content clearfix">
-
-        <div class="container">
-            <div class="top-content clearfix">
+    <div class="worksajax clearfix">
+        <div class="content align-center clearfix">
+            <div class="container work-content">
                 <h3 class="content-title">PAST</h3>
-            </div>
-        </div>
+                <div class="title-border"></div>
+                <div class="port-attr clearfix">
 
-        <div id="port-body" class="port-body clearfix">
+                </div>
+                <div class="portfolio-gallery clearfix">
 
-            @forelse($past_thumb as $thumb)
+                    @forelse($past_big as $image)
 
-                <div class="col-md-4  col-sm-6 col-xs-12 port-item brand future">
-                    <a href="" data-toggle="modal" data-target="#modalVerImage{!! $thumb->id !!}">
-                        <div class="hovers">
-                            {{--<div class="hover-detail">--}}
-                                {{--<h4>FUTURE</h4>--}}
-                                {{--<i class="icon-detail fa fa-bug"></i>--}}
-                                {{--<p>Discos, eventos y marcas</p>--}}
-                            {{--</div>--}}
+                        <div>
+                            <a data-rel="prettyPhoto[gallery]" href="{!! asset('imagenes/'.$image->path) !!}" >
+                                <span><i class="fa fa-search"></i></span>
+                                <img alt="works" src="{!! asset('imagenes/'.$image->path) !!}">
+                            </a>
                         </div>
-                        <img src="{!! asset('imagenes/'.$thumb->path) !!}" alt="portfolio">
-                    </a>
-                </div>
 
-            @empty
+                    @empty
 
-                <span>No hay ninguna imagen para mostrar</span>
+                        <span>No hay ninguna imagen para mostrar</span>
 
-            @endforelse
+                    @endforelse
+
+                </div><!--/.portfolio-gallery-->
+
+
+
+            </div><!--/.container-->
+            <div class="spacing40"></div>
 
         </div>
+    </div><!--/.worksajax-->
 
-        <div id="worksajax"></div>
-        <div class="worksajax clearboth clearfix"></div>
+    <!-- The javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>
 
-    </div>
-
-    @foreach($past_big as $imagen)
-
-        <div class="modal fade" id="modalVerImage{!! $imagen->thumbnail_id !!}">
-            <div class="modal-dialog ">
-                <div class="modal-content">
-                    <div class="modal-body">
-
-                        <img src="{{ asset('imagenes/'. $imagen->path) }}">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    @endforeach
-
-@endsection
+</body>
+</html>

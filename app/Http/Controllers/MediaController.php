@@ -2,6 +2,7 @@
 
 namespace Nobre\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Nobre\Http\Requests\CreateMediaRequest;
 use Nobre\Http\Requests\UpdateMediaRequest;
 use Nobre\Repositories\MediaRepository;
@@ -39,16 +40,19 @@ class MediaController extends AppBaseController
 
     public function index()
     {
-        $items = Image::where('thumbnail_id', '!=', null)->get();
-        return view($this->modelPlural.'.index')->with($this->modelPlural, $items);
+        $data['items'] = Image::where('thumbnail_id', '!=', null)->get();
+
+        return view($this->modelPlural.'.index')->with($data);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
         $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
         $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
         $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
+        $data['year'] = $this->years[$request->year];
+        //dd($data);
 
         return view($this->modelPlural.'.create')->with($data);
     }
