@@ -3,8 +3,9 @@
         <div class="container nav-box">
             <div class="logo">
                 <a href="{{ route('home') }}">
-                    <img class="logo1" alt="logo" src="{{ asset('template-web/images/logo.png') }}"><!--white logo-->
-                    <img class="logo2" alt="logo" src="{{ asset('template-web/images/logo2.png') }}"><!--black logo-->
+                    {{--<img class="logo1" alt="logo" src="{{ asset('template-web/images/logo.png') }}">--}}
+                    <span class="logo1"></span>
+                    <img class="logo2" alt="logo" src="{{ asset('template-web/images/logo2.png') }}">
                 </a>
             </div>
             <div class="menu-box hidden-xs hidden-sm">
@@ -24,8 +25,8 @@
             </div><!--/.box-mobile-->
             <div class="social-top hidden-xs hidden-sm">
                 <ul class="social-list">
-                    <li><a href="https://twitter.com/matiasnobreok"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/NobreManagement"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/nobremanagement/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/NobreManagement" target="_blank"><i class="fa fa-facebook"></i></a></li>
                 </ul><!--/.social-list-->
             </div>
         </div><!--/.container-->
