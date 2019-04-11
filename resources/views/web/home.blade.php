@@ -102,7 +102,6 @@
 
             <div class="text-center">
                 <a class="boton"  href="images/future.jpg"  data-rel="prettyPhoto">FUTURE</a>
-
                 <a class="boton" href="{{ route('pictures.present') }}" target="_blank">PRESENT</a>
                 <a class="boton" href="{{ route('pictures.past') }}" target="_blank">PAST</a>
             </div>
