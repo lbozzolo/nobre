@@ -56,7 +56,7 @@
 
         <div class="container">
             <div class="top-content clearfix">
-                <i class="fa fa-heart-o content-icon"></i>
+                <i class="fa fa-lightbulb-o content-icon"></i>
                 <h3 class="content-title">MARKETING & MANAGEMENT</h3>
 
                 <p class="sub-title">Brindamos consultoría privada para empresas y personas físicas. Soluciones completas de business intelligence, marketing estratégico y operativo, publicidad y promoción, transformación digital y community manager, personal branding, coaching y asesoría de imagen mediante técnicas de neuromarketing. </p>
@@ -71,8 +71,8 @@
 
             <div class="container">
                 <div class="top-content clearfix">
-                    <i class="fa fa-heart-o content-icon"></i>
-                    <h3 class="content-title">PRESS & COMUNICATION</h3>
+                    <i class="fa fa-newspaper-o content-icon"></i>
+                    <h3 class="content-title">PRESS & COMMUNICATION</h3>
 
                     <p class="sub-title">Ofrecemos todos los servicios de una agencia de comunicación y organización de eventos. Desde la planificación integral, implementación de estrategias y su posterior ajuste. Canalizamos de la manera más adecuada la actualidad de su empresa a los medios de comunicación más afines.</p>
                     <p class="sub-title">Para mejorar su imagen social y corporativa, contamos con una base de datos y servicios de apoyo a medida, fortaleciendo el área de prensa  y comunicación.  </p>
@@ -90,8 +90,8 @@
     <div id="social" class="content clearfix">
         <div class="container">
             <div class="top-content clearfix">
-                <i class="fa fa-newspaper-o content-icon"></i>
-                <h3 class="content-title">SOCIAL & MEDIA</h3>
+                <i class="fa fa-star-o content-icon"></i>
+                <h4 class="content-title">SOCIAL & MEDIA</h4>
 
                 <p class="sub-title">Producimos contenidos multiplataforma tanto para video como para fotografía, pudiendo tener flexibilidad a la hora de tratar con las necesidades del cliente.</p>
                 <p class="sub-title">Contamos con las habilidades y tecnologías de punta para grandes producciones,  campañas institucionales hasta para redes sociales.</p>
@@ -101,7 +101,8 @@
             </div><!--/.top-content-->
 
             <div class="text-center">
-                <a class="boton"  href="images/future.jpg" data-rel="prettyPhoto">FUTURE</a>
+                <a class="boton"  href="images/future.jpg"  data-rel="prettyPhoto">FUTURE</a>
+
                 <a class="boton" href="{{ route('pictures.present') }}" target="_blank">PRESENT</a>
                 <a class="boton" href="{{ route('pictures.past') }}" target="_blank">PAST</a>
             </div>
@@ -125,18 +126,17 @@
 
         <div class="container">
             <div class="top-content clearfix">
-                <i class="fa fa-heart-o content-icon"></i>
+                <i class="fa fa-bullseye content-icon"></i>
                 <h3 class="content-title">TALENTS & FRIENDS</h3>
 
                 <p class="sub-title">Nobre Management cuenta con un equipo de celebrities y profesionales como modelos, promotores, cantantes, actores, djs, entre otros.</p>
                 <p class="sub-title">Nuestro staff se caracteriza por su profesionalidad y frescura a la hora de desempeñar su tarea. Cuenta con una visión global, avant-garde y cosmopolita que nos ha permitido diferenciarnos de las agencias tradicionales.</p>
                 <p class="sub-title">El objetivo es promover un selecto grupo conocedores del mundo de la moda que con su talento estén a la altura de las más exigentes firmas del mercado mundial.</p>
-
-                <i class="fa fa-edit content-icon"></i>
+                <i class="fa fa-newspaper-o content-icon"></i>
                 <h3 class="content-title">WORKS</h3>
                 <p class="sub-title">Te mostramos los trabajos de algunos de nuestros talentos.</p>
                 <div class="text-center">
-                    <a class="boton" href="{{ route('works') }}">Ver trabajos</a>
+                    <a class="boton" href="{{ route('works') }}" target="_blank">Ver trabajos</a>
                 </div>
             </div><!--/.top-content-->
         </div><!--/.container-->
@@ -151,7 +151,7 @@
                 <i class="fa fa-hand-peace-o content-icon"></i>
                 <h3 class="content-title">CONTACT & NETWORKS</h3>
 
-                <p class="sub-title">Para más información contactenos a los mails y teléfonos brindados. Recordar enviar cv y book.</p>
+               <!--  <p class="sub-title">Para más información contactenos a los mails y teléfonos brindados. Recordar enviar cv y book.</p> -->
             </div><!--/.top-content-->
         </div><!--/.container-->
         <!-- <div id="map_canvas" class="map_canvas"></div> -->
