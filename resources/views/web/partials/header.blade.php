@@ -3,8 +3,7 @@
         <div class="container nav-box">
             <div class="logo">
                 <a href="{{ route('home') }}">
-                    {{--<img class="logo1" alt="logo" src="{{ asset('template-web/images/logo.png') }}">--}}
-                    <span class="logo1"></span>
+                    <img class="logo1" alt="logo" src="{{ asset('template-web/images/logo.png') }}">
                     <img class="logo2" alt="logo" src="{{ asset('template-web/images/logo2.png') }}">
                 </a>
             </div>
