@@ -2,7 +2,7 @@
     <div class="card-header">
 
         <span class="float-right">
-            <span id="producto-id" data-producto-id="{!! route('subir.imagen.sin.modelo', ['type' => 'past', 'year' => $year]) !!}"></span>
+            <span id="producto-id" data-producto-id="{!! route('subir.imagen.sin.modelo', ['type' => 'past']) !!}"></span>
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <input type="file" class="file-upload form-control" id="file-upload" name="img" accept="image/*">
         </span>

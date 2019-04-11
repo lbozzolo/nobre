@@ -210,10 +210,10 @@ class ImageController extends AppBaseController
         return $nombre;
     }
 
-    public function makeThumb($img, $name, $model = null, $type = null, $year = null)
+    public function makeThumb($img, $name, $model = null, $type = null)
     {
         $img->save(public_path('/imagenes/'). 'thumb-'.$name);
-        $image_thumb = Image::create(['path' => 'thumb-'.$name, 'main' => 0, 'type' => $type, 'year' => $year ]);
+        $image_thumb = Image::create(['path' => 'thumb-'.$name, 'main' => 0, 'type' => $type]);
 
         if($model)
             $model->images()->save($image_thumb);
@@ -300,7 +300,7 @@ class ImageController extends AppBaseController
         return response($status,200);
     }
 
-    public function saveWithoutModel(Request $request, $type, $year)
+    public function saveWithoutModel(Request $request, $type)
     {
         $validator = Validator::make($request->all(), ['img' => 'required|image|max:1024000']);
 
@@ -328,11 +328,11 @@ class ImageController extends AppBaseController
             // Confirma que el archivo no exista en el destino
             $nombre = $this->changeFileNameIfExists($file);
 
-            $imagen = Image::create(['path' => $nombre, 'main' => 0, 'type' => $type, 'year' => $year]);
+            $imagen = Image::create(['path' => $nombre, 'main' => 0, 'type' => $type]);
             $imagen->title = ($request->title)? $request->title : '';
             $file->move(public_path('imagenes'), $nombre);
 
-            $image_thumb = $this->makeThumb($img_thumb, $nombre, null, $type, $year);
+            $image_thumb = $this->makeThumb($img_thumb, $nombre, null, $type);
             $imagen->thumbnail_id = $image_thumb->id;
 
             $imagen->save();

@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'ImageController@saveJqueryImageUpload'
     ]);
 
-    Route::post('/{type}/{year}/without-model/jquery-image-upload', [
+    Route::post('/{type}/without-model/jquery-image-upload', [
         'as' => 'subir.imagen.sin.modelo',
         'uses' => 'ImageController@saveWithoutModel'
     ]);

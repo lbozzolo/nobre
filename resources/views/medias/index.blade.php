@@ -7,17 +7,19 @@
 
             <h1>Social & Media</h1>
 
-            {!! Form::open(['url' => route('medias.create'), 'method' => 'post']) !!}
+            <a href="{!! route('medias.create') !!}" class="btn btn-primary">Agregar</a>
 
-                <div class="form-group">
-                    <p>Seleccione un año</p>
-                    {!! Form::select('year', $years, (isset($year_selected))? $year_selected : null, ['class' => 'form-control', 'placeholder' => 'Seleccione un año']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::submit('Agregar', ['class' => 'btn btn-primary']) !!}
-                </div>
+            {{--{!! Form::open(['url' => route('medias.create'), 'method' => 'post']) !!}--}}
 
-            {!! Form::close() !!}
+                {{--<div class="form-group">--}}
+                    {{--<p>Seleccione un año</p>--}}
+                    {{--{!! Form::select('year', $years, (isset($year_selected))? $year_selected : null, ['class' => 'form-control', 'placeholder' => 'Seleccione un año']) !!}--}}
+                {{--</div>--}}
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::submit('Agregar', ['class' => 'btn btn-primary']) !!}--}}
+                {{--</div>--}}
+
+            {{--{!! Form::close() !!}--}}
 
         </div>
     </div>

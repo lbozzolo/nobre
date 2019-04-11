@@ -51,7 +51,7 @@ class MediaController extends AppBaseController
         $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
         $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
         $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
-        $data['year'] = $this->years[$request->year];
+
         //dd($data);
 
         return view($this->modelPlural.'.create')->with($data);
