@@ -64,7 +64,7 @@
                                 {{--</div>--}}
                             {{--</div>--}}
 
-                            <div class="gal-box col-lg-4 col-sm-6 col-xs-12">
+                            <div class="gal-box col-lg-4 col-sm-4 col-xs-4">
                                 <a href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}" data-rel="prettyPhoto[gallery]">
                                     <div class="hovers">
                                         <div class="gal-detail">
