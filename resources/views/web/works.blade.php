@@ -45,22 +45,23 @@
                         <li><a data-filter=".past" href="{{ route('works', '2017')  }}">2017</a></li>
                         <li><a data-filter=".past" href="{{ route('works', '2016')  }}">2016</a></li>
                         <li><a data-filter=".past" href="{{ route('works', '2015')  }}">2015</a></li>
+                        <li><a data-filter=".past" href="{{ route('works', '2014')  }}">2014</a></li>
                     </ul>
                 </div>
 
                 <div class="portfolio-gallery clearfix">
                     @foreach($works as $work)
 
-                        <div style="background-color: #2a2b32; height: 400px; margin: 1px; overflow: scroll">
+                        <div style="background-color: #2a2b32; height: 100%">
                             <a data-rel="prettyPhoto[gallery]" href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
                                 <span><i class="fa fa-search"></i></span>
                                 <img alt="works" src="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
 
                             </a>
-                            <div class="panel-body">
-                                <p style="color: white">{!! $work->title !!}</p>
-                                {!! $work->body !!}
-                            </div>
+                            {{--<div class="panel-body hidden-xs">--}}
+                                {{--<p style="color: white">{!! $work->title !!}</p>--}}
+                                {{--{!! $work->body !!}--}}
+                            {{--</div>--}}
                         </div>
 
                     @endforeach
