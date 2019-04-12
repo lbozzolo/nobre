@@ -49,22 +49,23 @@
                     </ul>
                 </div>
 
-                <div class="portfolio-gallery clearfix">
-                    @foreach($works as $work)
+                <div class="">
+                    <div class="row">
+                        @foreach($works as $work)
 
-                        <div style="background-color: #2a2b32; height: 100%">
-                            <a data-rel="prettyPhoto[gallery]" href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
-                                <span><i class="fa fa-search"></i></span>
-                                <img alt="works" src="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
+                            <div style="background-color: #2a2b32; height: 100%; padding: 0px; margin:0px" class="col-lg-4 col-sm-6 col-xs-12">
+                                <a data-rel="prettyPhoto[gallery]" href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
+                                    {{--<span><i class="fa fa-search"></i></span>--}}
+                                    <img alt="works" style="width: 100%" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">
+                                </a>
+                                <div class="panel-body ">
+                                    <p style="color: white; margin: 0px; padding: 0px">{!! $work->title !!}</p>
+                                    <small>{!! $work->body !!}</small>
+                                </div>
+                            </div>
 
-                            </a>
-                            {{--<div class="panel-body hidden-xs">--}}
-                                {{--<p style="color: white">{!! $work->title !!}</p>--}}
-                                {{--{!! $work->body !!}--}}
-                            {{--</div>--}}
-                        </div>
-
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div><!--/.portfolio-gallery-->
 
 

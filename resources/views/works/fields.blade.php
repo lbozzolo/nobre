@@ -26,7 +26,8 @@
 <div class="form-group col-lg-12">
     {!! Form::label('body', 'Descripción:') !!}
     <div>
-        {!! Form::textarea('body', null, ['class' => 'form-control', 'id' => 'summernote', 'rows' => '10']) !!}
+        {{--{!! Form::textarea('body', null, ['class' => 'form-control', 'id' => 'summernote', 'rows' => '10']) !!}--}}
+        {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => '5']) !!}
     </div>
 </div>
 

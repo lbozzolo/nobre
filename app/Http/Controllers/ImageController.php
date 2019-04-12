@@ -283,11 +283,19 @@ class ImageController extends AppBaseController
             // Confirma que el archivo no exista en el destino
             $nombre = $this->changeFileNameIfExists($file);
 
+            $imagenInt = Intervention::make($request->file('img'))->encode('jpg', 50);
+
+            $imagenInt->save(public_path('/imagenes/'). $nombre);
             $imagen = Image::create(['path' => $nombre, 'main' => 0]);
-            $imagen->title = ($request->title)? $request->title : '';
-            $file->move(public_path('imagenes'), $nombre);
 
             $model->images()->save($imagen);
+
+
+//            $imagen = Image::create(['path' => $nombre, 'main' => 0]);
+//            $imagen->title = ($request->title)? $request->title : '';
+//            $file->move(public_path('imagenes'), $nombre);
+//
+//            $model->images()->save($imagen);
 
             $image_thumb = $this->makeThumb($img_thumb, $nombre, $model, null);
             $imagen->thumbnail_id = $image_thumb->id;
