@@ -73,7 +73,7 @@
                                             <p>{!! $work->body !!}</p>
                                         </div><!--gal-detail-->
                                     </div><!--/.hovers-->
-                                    <img alt="gallery" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">
+                                    <img alt="{!! $work->title !!} - {!! $work->body !!}" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">
                                 </a>
                             </div><!--/.gal-box-->
 
