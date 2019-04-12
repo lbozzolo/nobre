@@ -53,16 +53,29 @@
                     <div class="row">
                         @foreach($works as $work)
 
-                            <div style="background-color: #2a2b32; height: 100%; padding: 0px; margin:0px" class="col-lg-4 col-sm-6 col-xs-12">
-                                <a data-rel="prettyPhoto[gallery]" href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">
+                            {{--<div style="background-color: #2a2b32; height: 100%; padding: 0px; margin:0px" class="col-lg-4 col-sm-6 col-xs-12">--}}
+                                {{--<a data-rel="prettyPhoto[gallery]" href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}">--}}
                                     {{--<span><i class="fa fa-search"></i></span>--}}
-                                    <img alt="works" style="width: 100%" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">
+                                    {{--<img alt="works" style="width: 100%" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">--}}
+                                {{--</a>--}}
+                                {{--<div class="panel-body" style="margin: 0px; padding: 0px; min-height: 90px">--}}
+                                    {{--<span style="color: white; margin: 0px; padding: 0px">{!! $work->title !!}</span><br>--}}
+                                    {{--<small style="margin: 0px; padding: 0px">{!! $work->body !!}</small>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
+                            <div class="gal-box col-lg-4 col-sm-6 col-xs-12">
+                                <a href="{!! ($work->mainImage())? asset('imagenes/'.$work->mainImage()->path) : '' !!}" data-rel="prettyPhoto[gallery]">
+                                    <div class="hovers">
+                                        <div class="gal-detail">
+                                            <h4>{!! $work->title !!}</h4>
+                                            
+                                            <p>{!! $work->body !!}</p>
+                                        </div><!--gal-detail-->
+                                    </div><!--/.hovers-->
+                                    <img alt="gallery" src="{!! ($work->mainImage())? asset('imagenes/thumb-'.$work->mainImage()->path) : '' !!}">
                                 </a>
-                                <div class="panel-body ">
-                                    <p style="color: white; margin: 0px; padding: 0px">{!! $work->title !!}</p>
-                                    <small>{!! $work->body !!}</small>
-                                </div>
-                            </div>
+                            </div><!--/.gal-box-->
 
                         @endforeach
                     </div>
