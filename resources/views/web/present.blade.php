@@ -32,55 +32,44 @@
 
 <body>
 
-<div class="worksajax clearfix">
-    <div class="content align-center clearfix">
-        <div class="container work-content">
-            <h3 class="content-title">PRESENT</h3>
-            <div class="title-border"></div>
-            <div class="port-attr clearfix">
+    <div class="worksajax clearfix">
+        <div class="content align-center clearfix" style="padding-top: 10px">
+            <div class="container work-content">
+                <a href="{{ route('home') }}">Home</a>
+                <h3 class="content-title" style="margin-top: 8px">PRESENT</h3>
+
+                <div class="row">
+                    @foreach($present_big as $image)
+
+                        <div class="gal-box col-xs-4">
+                            <a href="{!! asset('imagenes/'.$image->path) !!}" data-rel="prettyPhoto[gallery]">
+                                <img alt="works" src="{!! asset('imagenes/thumb-'.$image->path) !!}">
+                            </a>
+                        </div>
+
+                    @endforeach
+                </div>
 
             </div>
-            <div class="portfolio-gallery clearfix">
+            <div class="spacing40"></div>
 
-                @forelse($present_big as $image)
-
-                    <div>
-                        <a data-rel="prettyPhoto[gallery]" href="{!! asset('imagenes/'.$image->path) !!}" >
-                            <span><i class="fa fa-search"></i></span>
-                            <img alt="works" src="{!! asset('imagenes/'.$image->path) !!}">
-                        </a>
-                    </div>
-
-                @empty
-
-                    <span>No hay ninguna imagen para mostrar</span>
-
-                @endforelse
-
-            </div><!--/.portfolio-gallery-->
-
-
-
-        </div><!--/.container-->
-        <div class="spacing40"></div>
-
+        </div>
     </div>
-</div><!--/.worksajax-->
 
-<!-- The javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>
+    <!-- The javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>
 
 </body>
 </html>

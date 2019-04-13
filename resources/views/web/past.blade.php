@@ -33,39 +33,28 @@
 <body>
 
     <div class="worksajax clearfix">
-        <div class="content align-center clearfix">
+        <div class="content align-center clearfix" style="padding-top: 10px">
             <div class="container work-content">
-                <h3 class="content-title">PAST</h3>
-                <div class="title-border"></div>
-                <div class="port-attr clearfix">
+                <a href="{{ route('home') }}">Home</a>
+                <h3 class="content-title" style="margin-top: 8px">PAST</h3>
 
-                </div>
-                <div class="portfolio-gallery clearfix">
+                <div class="row">
+                    @foreach($past_big as $image)
 
-                    @forelse($past_big as $image)
-
-                        <div>
-                            <a data-rel="prettyPhoto[gallery]" href="{!! asset('imagenes/'.$image->path) !!}" >
-                                <span><i class="fa fa-search"></i></span>
-                                <img alt="works" src="{!! asset('imagenes/'.$image->path) !!}">
+                        <div class="gal-box col-xs-4">
+                            <a href="{!! asset('imagenes/'.$image->path) !!}" data-rel="prettyPhoto[gallery]">
+                                <img alt="works" src="{!! asset('imagenes/thumb-'.$image->path) !!}">
                             </a>
                         </div>
 
-                    @empty
+                    @endforeach
+                </div>
 
-                        <span>No hay ninguna imagen para mostrar</span>
-
-                    @endforelse
-
-                </div><!--/.portfolio-gallery-->
-
-
-
-            </div><!--/.container-->
+            </div>
             <div class="spacing40"></div>
 
         </div>
-    </div><!--/.worksajax-->
+    </div>
 
     <!-- The javascript
     ================================================== -->
