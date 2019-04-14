@@ -59,7 +59,7 @@
                 <i class="fa fa-lightbulb-o content-icon"></i>
                 <h3 class="content-title">MARKETING & MANAGEMENT</h3>
 
-                <p class="sub-title">Brindamos consultoría privada para empresas y personas físicas. Soluciones completas de business intelligence, marketing estratégico y operativo, publicidad y promoción, transformación digital y community manager, personal branding, coaching y asesoría de imagen mediante técnicas de neuromarketing. </p>
+                <p class="sub-title">Brindamos consultoría privada para empresas y personas. Soluciones completas de business intelligence, marketing estratégico y operativo, publicidad y promoción, transformación digital y community manager, personal branding, coaching y asesoría de imagen mediante técnicas de neuromarketing. </p>
                 <p class="sub-title">Las neurociencias aplicadas constituyen la llave maestra para la innovación en materia de liderazgo, conducción y gestión de organizaciones y empresas. </p>
                 <p class="sub-title">Elaboramos planes de negocios y realizamos toda la comunicación institucional, desde la estrategia / idea hasta la implementación final. Combinamos funcionalidad operativa, eficacia técnica, refinamiento estético y originalidad de acciones y campañas. </p>
                 <p class="sub-title">Contamos con profesionales en diversas áreas para brindarle calidad en el servicio, coherencia y seriedad al momento que su empresa lo necesite. </p>
@@ -93,15 +93,15 @@
                 <i class="fa fa-star-o content-icon"></i>
                 <h4 class="content-title">SOCIAL & MEDIA</h4>
 
-                <p class="sub-title">Producimos contenidos multiplataforma tanto para video como para fotografía, pudiendo tener flexibilidad a la hora de tratar con las necesidades del cliente.</p>
+                <p class="sub-title">Producimos contenidos multiplataforma tanto para video como para fotografía, generando el contenido según necesidades de cada cliente.</p>
                 <p class="sub-title">Contamos con las habilidades y tecnologías de punta para grandes producciones,  campañas institucionales hasta para redes sociales.</p>
-                <p class="sub-title">vNos especializamos en la planificación, desarrollo e implementación de estrategias de marketing digital orientadas a segmentos de públicos definidos.</p>
+                <p class="sub-title">Nos especializamos en la planificación, desarrollo e implementación de estrategias de marketing digital orientadas a segmentos de públicos definidos.</p>
                 <p class="sub-title">Aplicamos las prácticas recomendadas para cada canal para asegurar altos niveles de alcance, lectura y engagement con el usuario final.</p>
 
             </div><!--/.top-content-->
 
             <div class="text-center">
-                <a class="boton"  href="images/future.jpg"  data-rel="prettyPhoto">FUTURE</a>
+                <a class="boton"  href="{{ asset('images/future.jpg') }}"  data-rel="">FUTURE</a>
                 <a class="boton" href="{{ route('pictures.present') }}" target="_blank">PRESENT</a>
                 <a class="boton" href="{{ route('pictures.past') }}" target="_blank">PAST</a>
             </div>
@@ -129,7 +129,7 @@
                 <h3 class="content-title">TALENTS & FRIENDS</h3>
 
                 <p class="sub-title">Nobre Management cuenta con un equipo de celebrities y profesionales como modelos, promotores, cantantes, actores, djs, entre otros.</p>
-                <p class="sub-title">Nuestro staff se caracteriza por su profesionalidad y frescura a la hora de desempeñar su tarea. Cuenta con una visión global, avant-garde y cosmopolita que nos ha permitido diferenciarnos de las agencias tradicionales.</p>
+                <p class="sub-title">Nuestro staff se caracteriza por su profesionalismo y frescura a la hora de desempeñar su tarea. Cuenta con una visión global, avant-garde y cosmopolita que nos ha permitido diferenciarnos de las agencias tradicionales.</p>
                 <p class="sub-title">El objetivo es promover un selecto grupo conocedores del mundo de la moda que con su talento estén a la altura de las más exigentes firmas del mercado mundial.</p>
                 <i class="fa fa-newspaper-o content-icon"></i>
                 <h3 class="content-title">WORKS</h3>
