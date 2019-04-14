@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\URL;
 use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 use Nobre\Http\Requests\ContactRequest;
 use Nobre\Http\Requests\CreateApplicantRequest;
-use Nobre\Models\Applicant;
 use Nobre\Models\Category;
 use Illuminate\Support\Facades\Mail;
 use Nobre\Models\Image;
 use Nobre\Models\Slider;
 use Nobre\Models\Work;
+use Nobre\Repositories\ApplicantRepository as ApplicantRepo;
 
 class WebController extends AppBaseController
 {
@@ -53,10 +53,10 @@ class WebController extends AppBaseController
         return view('web.works')->with($data);
     }
 
-    public function sendDataApplicant(CreateApplicantRequest $request)
+    public function sendDataApplicant(CreateApplicantRequest $request, ApplicantRepo $applicantRepo)
     {
         $input = $request->all();
-        $item = Applicant::create($input);
+        $item = $applicantRepo->create($input);
 
         if (!$item)
             return redirect()->back()->withErrors('Ocurrió un error. No se pudieron enviar los datos');
@@ -66,8 +66,6 @@ class WebController extends AppBaseController
 
     public function postContacto(ContactRequest $request)
     {
-        //dd($request->all());
-
         $data = array(
             'name' => $request->name,
             'email' => $request->email,
@@ -84,7 +82,6 @@ class WebController extends AppBaseController
         });
 
         return redirect()->back()->with('ok', 'Su correo se ha enviado con éxito.');
-
 
     }
 

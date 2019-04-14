@@ -21,7 +21,8 @@ class Applicant extends Model
         'text',
     ];
 
-    protected $casts = [
+    protected $casts =
+    [
         'name' => 'string',
         'lastname' => 'string',
         'email' => 'string',
@@ -34,7 +35,8 @@ class Applicant extends Model
         'text' => 'string',
     ];
 
-    public static $rules = [
+    public static $rules =
+    [
         'name' => 'required',
         'lastname' => 'required',
         'email' => 'required',

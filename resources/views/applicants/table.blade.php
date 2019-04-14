@@ -16,7 +16,7 @@
             <td>{!! $applicant->full_name !!}</td>
             <td>{!! $applicant->email !!}</td>
             <td>{!! config('sistema.countries.'.$applicant->country) !!}</td>
-            <td>{!! ($applicant->province)? config('sistema.provinces.'.$applicant->province) : '-' !!}</td>
+            <td>{!! (in_array($applicant->province, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]))? config('sistema.provinces.'.$applicant->province) : '-' !!}</td>
             {{--<td>--}}
                 {{--@foreach($applicant->categories as $category)--}}
                     {{--<span class="badge badge-dark">{!! $category->name !!}</span>--}}
