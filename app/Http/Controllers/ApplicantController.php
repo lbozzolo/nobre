@@ -16,6 +16,7 @@ class ApplicantController extends AppBaseController
     private $model;
     private $modelSpanish;
     private $modelPlural;
+    private $modelSpanishPlural;
     private $store_success_message;
     private $store_failure_message;
     private $show_failure_message;
@@ -30,6 +31,7 @@ class ApplicantController extends AppBaseController
         $this->model = 'applicant';
         $this->modelPlural = 'applicants';
         $this->modelSpanish = 'aspirante';
+        $this->modelSpanishPlural = 'aspirantes';
         $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
         $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
         $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');

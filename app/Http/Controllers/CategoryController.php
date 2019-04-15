@@ -12,6 +12,7 @@ class CategoryController extends AppBaseController
     private $repo;
     private $model;
     private $modelSpanish;
+    private $modelSpanishPlural;
     private $modelPlural;
     private $store_success_message;
     private $store_failure_message;
@@ -27,6 +28,7 @@ class CategoryController extends AppBaseController
         $this->model = 'category';
         $this->modelPlural = 'categories';
         $this->modelSpanish = 'categoría';
+        $this->modelSpanishPlural = 'categorías';
         $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
         $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
         $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');

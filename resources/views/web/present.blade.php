@@ -63,6 +63,8 @@
             margin: 0px;
             padding: 0px;
         }
+
+
     </style>
 
 
@@ -70,7 +72,6 @@
 </head>
 
 <body>
-
 
     <div class="worksajax clearfix">
         <div class="content align-center clearfix" style="padding-top: 10px">
@@ -80,21 +81,20 @@
 
                 <div class="row">
 
-                    <div class="row">
+                    @foreach($present_big as $image)
 
-                        @foreach($present_big as $image)
+                        <div class="col-lg-4 col-md-4 col-xs-4 flat">
+                            <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
+                               data-image="{!! asset('imagenes/'.$image->path) !!}"
+                               data-target="#image-gallery">
+                                <img class="" src="{!! asset('imagenes/thumb-'.$image->path) !!}" content="flat" alt="Another alt text">
+                            </a>
+                        </div>
 
-                            <div class="col-lg-4 col-md-4 col-xs-4 flat">
-                                <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                   data-image="{!! asset('imagenes/'.$image->path) !!}"
-                                   data-target="#image-gallery">
-                                    <img class="" src="{!! asset('imagenes/thumb-'.$image->path) !!}" alt="Another alt text">
-                                </a>
-                            </div>
+                    @endforeach
 
-                        @endforeach
-
-                    </div>
+                </div>
+                <div class="row">
 
                     <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -138,7 +138,6 @@
     {{--<script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>--}}
     {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>--}}
     {{--<script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>--}}
-
 
     <script>
 
