@@ -76,9 +76,9 @@
 
 <body>
 
-    <div class="worksajax clearfix flat">
-        <div class="content align-center clearfix flat" style="padding-top: 10px">
-            <div class="container work-content" style="width:100%">
+    <div class="worksajax clearfix ">
+        <div class="content align-center clearfix " style="padding-top: 10px">
+            <div class="container work-content">
 
                 <h3 class="content-title" style="margin-top: 8px">PRESENT</h3>
 
@@ -90,7 +90,7 @@
                             <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
                                data-image="{!! asset('imagenes/'.$image->path) !!}"
                                data-target="#image-gallery">
-                                <img src="{!! asset('imagenes/thumb-'.$image->path) !!}" alt="" style="width: 99%; margin: 0px">
+                                <img src="{!! asset('imagenes/thumb-'.$image->path) !!}" alt="">
                             </a>
                         </div>
 
