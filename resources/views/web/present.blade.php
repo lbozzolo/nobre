@@ -83,7 +83,7 @@
 
                     @foreach($present_big as $image)
 
-                        <div class="col-lg-4 col-md-4 col-xs-4 flat">
+                        <div class="col-lg-4 col-md-4 col-xs-3 flat">
                             <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
                                data-image="{!! asset('imagenes/'.$image->path) !!}"
                                data-target="#image-gallery">
