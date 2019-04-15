@@ -87,7 +87,7 @@
                             <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
                                data-image="{!! asset('imagenes/'.$image->path) !!}"
                                data-target="#image-gallery">
-                                <img class="" src="{!! asset('imagenes/thumb-'.$image->path) !!}" content="flat" alt="Another alt text">
+                                <img src="{!! asset('imagenes/thumb-'.$image->path) !!}" alt="" style="width: 99%; margin: 0px">
                             </a>
                         </div>
 
