@@ -6,8 +6,6 @@ use Nobre\Http\Requests\CreateWorkRequest;
 use Nobre\Http\Requests\UpdateWorkRequest;
 use Nobre\Repositories\WorkRepository;
 use Nobre\Http\Controllers\AppBaseController as AppBaseController;
-use Illuminate\Http\Request;
-use Prettus\Repository\Criteria\RequestCriteria;
 
 class WorkController extends AppBaseController
 {
@@ -15,6 +13,7 @@ class WorkController extends AppBaseController
     private $model;
     private $modelSpanish;
     private $modelPlural;
+    private $modelSpanishPlural;
     private $store_success_message;
     private $store_failure_message;
     private $show_failure_message;
@@ -29,6 +28,7 @@ class WorkController extends AppBaseController
         $this->model = 'work';
         $this->modelPlural = 'works';
         $this->modelSpanish = 'trabajo';
+        $this->modelSpanishPlural = 'trabajos';
         $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
         $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
         $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');

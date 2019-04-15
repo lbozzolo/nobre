@@ -59,9 +59,9 @@
         }
 
         .flat {
-            border: 0px;
-            margin: 0px;
-            padding: 0px;
+            border: 0px!important;
+            margin: 0px!important;
+            padding: 0px!important;
         }
 
 
@@ -73,13 +73,13 @@
 
 <body>
 
-    <div class="worksajax clearfix">
-        <div class="content align-center clearfix" style="padding-top: 10px">
-            <div class="container work-content">
+    <div class="worksajax clearfix flat">
+        <div class="content align-center clearfix flat" style="padding-top: 10px">
+            <div class="container work-content " style="width:100%">
 
                 <h3 class="content-title" style="margin-top: 8px">PRESENT</h3>
 
-                <div class="row">
+                <div class="row" style="width: 125%">
 
                     @foreach($present_big as $image)
 
@@ -94,7 +94,6 @@
                     @endforeach
 
                 </div>
-                <div class="row">
 
                     <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -115,9 +114,9 @@
                         </div>
                     </div>
 
-                </div>
-
             </div>
+
+
 
             <div class="spacing40"></div>
 
