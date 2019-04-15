@@ -11,8 +11,8 @@
     <!-- Le styles -->
     <link href="{{ asset('template-web/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('template-web/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('template-web/css/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('template-web/css/prettyPhoto.css') }}" rel="stylesheet">
+    {{--<link href="{{ asset('template-web/css/owl.carousel.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('template-web/css/prettyPhoto.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('template-web/css/style.css') }}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -22,138 +22,103 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="{{ asset('template-web/images/favicon.png') }}">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{ asset('photo-gallery/photo-gallery.js') }}"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        .btn:focus, .btn:active, button:focus, button:active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        #image-gallery .modal-footer{
+            display: block;
+        }
+
+        .thumb{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .modal-backdrop {
+            z-index: -1;
+        }
+
+        .flat {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
 
 
-
-
-
-    {{--<div class="pp_pic_holder pp_default" style="top: 42px; left: 344px; display: block; width: 992px;">--}}
-        {{--<div class="ppt" style="opacity: 1; display: block; width: 960px;">works</div>--}}
-            {{--<div class="pp_top">--}}
-                {{--<div class="pp_left"></div>--}}
-                {{--<div class="pp_middle"></div>--}}
-                {{--<div class="pp_right"></div>--}}
-            {{--</div>--}}
-            {{--<div class="pp_content_container">--}}
-                {{--<div class="pp_left">--}}
-                    {{--<div class="pp_right">--}}
-                        {{--<div class="pp_content" style="height: 791px; width: 960px;">--}}
-                            {{--<div class="pp_loaderIcon" style="display: none;"></div>--}}
-                            {{--<div class="pp_fade" style="display: block;">--}}
-                                {{--<a href="#" class="pp_expand" title="Expand the image" style="display: none;">Expand</a>--}}
-                                {{--<div class="pp_hoverContainer" style="height: 720px; width: 960px;">--}}
-                                    {{--<a class="pp_next" href="#">next</a>--}}
-                                    {{--<a class="pp_previous" href="#">previous</a>--}}
-                                {{--</div>--}}
-                                {{--<div id="pp_full_res">--}}
-                                    {{--<img id="fullResImage" src="http://nobre.desarrollo/imagenes/blob-hCbnfx80YJwfNpNxKs.png" style="height: 720px; width: 960px;">--}}
-                                {{--</div>--}}
-                                {{--<div class="pp_gallery" style="margin-left: -85.5px; display: none;">--}}
-                                    {{--<a href="#" class="pp_arrow_previous" style="display: none;">Previous</a>--}}
-                                    {{--<div style="width: 176px;">--}}
-                                        {{--<ul style="width: 171px; left: 0px;">--}}
-                                            {{--<li class="selected">--}}
-                                                {{--<a href="#">--}}
-                                                    {{--<img src="http://nobre.desarrollo/imagenes/blob-hCbnfx80YJwfNpNxKs.png" width="50" alt="">--}}
-                                                {{--</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="">--}}
-                                                {{--<a href="#">--}}
-                                                    {{--<img src="http://nobre.desarrollo/imagenes/blob-4btDeuoOTh77ar0I9I.png" width="50" alt="">--}}
-                                                {{--</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="">--}}
-                                                {{--<a href="#">--}}
-                                                    {{--<img src="http://nobre.desarrollo/imagenes/blob-ifyGQh6xbuq2citDRs.png" width="50" alt="">--}}
-                                                {{--</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                    {{--<a href="#" class="pp_arrow_next" style="display: none;">Next</a>--}}
-                                {{--</div>--}}
-                                {{--<div class="pp_details" style="width: 960px;">--}}
-                                    {{--<div class="pp_nav">--}}
-                                        {{--<a href="#" class="pp_play">Play</a>--}}
-                                        {{--<a href="#" class="pp_arrow_previous">Previous</a>--}}
-                                        {{--<p class="currentTextHolder">1/3</p>--}}
-                                        {{--<a href="#" class="pp_arrow_next">Next</a>--}}
-                                    {{--</div>--}}
-                                    {{--<p class="pp_description" style="display: none;"></p>--}}
-                                    {{--<div class="pp_social">--}}
-                                        {{--<div class="twitter">--}}
-                                            {{--<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.2e9f365dae390394eb8d923cba8c5b11.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fnobre.desarrollo%2Fweb%2Fpresent&amp;size=m&amp;text=Nobre%20Management%20-%20Agencia&amp;time=1555276830780&amp;type=share&amp;url=http%3A%2F%2Fnobre.desarrollo%2Fweb%2Fpresent" style="position: static; visibility: visible; width: 61px; height: 20px;"></iframe>--}}
-                                            {{--<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="facebook">--}}
-                                            {{--<iframe src="//www.facebook.com/plugins/like.php?locale=en_US&amp;href=http%3A%2F%2Fnobre.desarrollo%2Fweb%2Fpresent&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:23px;" allowtransparency="true"></iframe>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<a class="pp_close" href="#">Close</a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--<div class="pp_bottom">--}}
-            {{--<div class="pp_left"></div>--}}
-            {{--<div class="pp_middle"></div>--}}
-            {{--<div class="pp_right"></div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="worksajax clearfix">
         <div class="content align-center clearfix" style="padding-top: 10px">
             <div class="container work-content">
-                <a href="{{ route('home') }}">Home</a>
+
                 <h3 class="content-title" style="margin-top: 8px">PRESENT</h3>
 
                 <div class="row">
-                    @foreach($present_big as $image)
 
-                        <div class="gal-box col-xs-4">
-                            <a href="{!! asset('imagenes/'.$image->path) !!}" data-rel="prettyPhoto[gallery]">
-                                <img alt="works" src="{!! asset('imagenes/thumb-'.$image->path) !!}">
-                            </a>
+                    <div class="row">
+
+                        @foreach($present_big as $image)
+
+                            <div class="col-lg-4 col-md-4 col-xs-4 flat">
+                                <a class="thumbnail flat" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                   data-image="{!! asset('imagenes/'.$image->path) !!}"
+                                   data-target="#image-gallery">
+                                    <img class="" src="{!! asset('imagenes/thumb-'.$image->path) !!}" alt="Another alt text">
+                                </a>
+                            </div>
+
+                        @endforeach
+
+                    </div>
+
+                    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="image-gallery-title"></h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i></button>
+                                    <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i></button>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                    @endforeach
                 </div>
 
             </div>
+
             <div class="spacing40"></div>
 
         </div>
@@ -162,17 +127,117 @@
     <!-- The javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>--}}
+
+
+    <script>
+
+        let modalId = $('#image-gallery');
+
+        $(document)
+            .ready(function () {
+
+                loadGallery(true, 'a.thumbnail');
+
+                //This function disables buttons when needed
+                function disableButtons(counter_max, counter_current) {
+                    $('#show-previous-image, #show-next-image')
+                        .show();
+                    if (counter_max === counter_current) {
+                        $('#show-next-image')
+                            .hide();
+                    } else if (counter_current === 1) {
+                        $('#show-previous-image')
+                            .hide();
+                    }
+                }
+
+                /**
+                 *
+                 * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+                 * @param setClickAttr  Sets the attribute for the click handler.
+                 */
+
+                function loadGallery(setIDs, setClickAttr) {
+                    let current_image,
+                        selector,
+                        counter = 0;
+
+                    $('#show-next-image, #show-previous-image')
+                        .click(function () {
+                            if ($(this)
+                                .attr('id') === 'show-previous-image') {
+                                current_image--;
+                            } else {
+                                current_image++;
+                            }
+
+                            selector = $('[data-image-id="' + current_image + '"]');
+                            updateGallery(selector);
+                        });
+
+                    function updateGallery(selector) {
+                        let $sel = selector;
+                        current_image = $sel.data('image-id');
+                        $('#image-gallery-title')
+                            .text($sel.data('title'));
+                        $('#image-gallery-image')
+                            .attr('src', $sel.data('image'));
+                        disableButtons(counter, $sel.data('image-id'));
+                    }
+
+                    if (setIDs == true) {
+                        $('[data-image-id]')
+                            .each(function () {
+                                counter++;
+                                $(this)
+                                    .attr('data-image-id', counter);
+                            });
+                    }
+                    $(setClickAttr)
+                        .on('click', function () {
+                            updateGallery($(this));
+                        });
+                }
+
+            });
+
+        // build key actions
+        $(document)
+            .keydown(function (e) {
+                switch (e.which) {
+                    case 37: // left
+                        if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+                            $('#show-previous-image')
+                                .click();
+                        }
+                        break;
+
+                    case 39: // right
+                        if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+                            $('#show-next-image')
+                                .click();
+                        }
+                        break;
+
+                    default:
+                        return; // exit this handler for other keys
+                }
+                e.preventDefault(); // prevent the default action (scroll / move caret)
+            });
+
+
+    </script>
 
 </body>
 </html>
