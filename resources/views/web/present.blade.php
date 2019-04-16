@@ -76,8 +76,8 @@
 
 <body>
 
-    <div class="worksajax clearfix ">
-        <div class="content align-center clearfix " style="padding-top: 10px">
+    <div class="worksajax clearfix">
+        <div class="content align-center clearfix" style="padding-top: 10px">
             <div class="container work-content">
 
                 <h3 class="content-title" style="margin-top: 8px">PRESENT</h3>
@@ -98,48 +98,32 @@
 
                 </div>
 
-                    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="image-gallery-title"></h4>
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <img id="image-gallery-image" class="img-responsive col-md-12" src="">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i></button>
-                                    <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i></button>
-                                </div>
+                {!! $present_big->render() !!}
+
+                <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="image-gallery-title"></h4>
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i></button>
+                                <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
+                </div>
 
             </div>
-
-
-
-            <div class="spacing40"></div>
 
         </div>
     </div>
 
-    <!-- The javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('template-web/js/portfolio.js') }}"></script>--}}
 
     <script>
 
