@@ -26,6 +26,10 @@
             }
         }
 
+        .modal-backdrop {
+            z-index: -1;
+        }
+
         .boton {
             border: 2px solid lightgrey;
             border-radius: 0px;
@@ -101,23 +105,34 @@
             </div><!--/.top-content-->
 
             <div class="text-center">
-                <a class="boton"  href="{{ asset('images/future.jpg') }}"  data-rel="">FUTURE</a>
+                <button type="button" class="boton"   data-target="#future-modal" data-toggle="modal" data-filter=".future">FUTURE</button>
                 <a class="boton" href="{{ route('pictures.present') }}" target="_blank">PRESENT</a>
                 <a class="boton" href="{{ route('pictures.past') }}" target="_blank">PAST</a>
             </div>
 
-            {{--<ul class="port-filter clearboth clearfix">--}}
-                {{--<li><a data-filter=".future" href="#">FUTURE</a></li>--}}
-                {{--<li><a data-filter=".present" href="{{ route('pictures.present') }}">PRESENT</a></li>--}}
-                {{--<li><a href="{{ route('pictures.past') }}">PAST</a></li>--}}
-            {{--</ul>--}}
         </div><!--/container-->
+
 
 
         <div id="worksajax"><!--work ajax anchor--></div>
         <div class="worksajax clearboth clearfix"></div><!--portfolio ajax content here-->
     </div><!--/works-->
     <!--WORKS END-->
+
+    <div class="modal fade" id="future-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content col-lg-8 col-lg-offset-2">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="image-gallery-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center" style="padding: 200px 0px">
+                    <img src="{{ asset('images/future.jpg') }}">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--TALENTS START-->
@@ -276,6 +291,7 @@
                     </div>
 
                     <div class="spacing40"></div>
+
                 </div><!--/.contact-form-->
             </div><!--/.row-->
         </div><!--/contact-list-->
