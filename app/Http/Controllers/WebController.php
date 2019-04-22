@@ -48,7 +48,7 @@ class WebController extends AppBaseController
     public function works($year = null)
     {
         $year = ($year)? $year : Carbon::now()->year;
-        $data['works'] = Work::with('images')->active()->where('year', '=', $year)->get();
+        $data['works'] = Work::with('images')->active()->where('year', '=', $year)->paginate(30);
 
         return view('web.works')->with($data);
     }
