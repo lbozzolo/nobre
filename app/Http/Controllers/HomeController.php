@@ -17,12 +17,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        $data = '';
-//        $data['estatutos'] = Work::count();
-//        $data['noticias'] = Noticia::count();
-//        $data['applicants'] = Servicio::count();
-//        $data['categories'] = Category::count();
-
-        return view('home')->with($data);
+        return view('home');
     }
 }

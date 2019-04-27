@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -51,34 +51,4 @@ class LoginController extends Controller
         return redirect('web');
     }
 
-    public function loginMedicos(Request $request)
-    {
-        $this->validate($request, [
-            'matricula'   => 'required',
-            'password' => 'required|min:4'
-        ]);
-
-        $medico = Medico::where('matricula', '=', $request->matricula)->where('clave', '=', $request->password)->first();
-
-        if (!$medico)
-            return redirect()->back()->withErrors('Los datos ingresados no coinciden con nuestros registros');
-
-        $user = User::where('matricula', '=', $medico->matricula)->first();
-
-        if(!$user){
-            $user = User::create([
-                'name' => $medico->apynom,
-                'matricula' => $medico->matricula,
-                'email' => $medico->email,
-                'password' => Hash::make($medico->clave)
-            ]);
-        }
-
-        Auth::login($user);
-
-        $redirect = (Auth::user()->isMedico())? 'liquidaciones.index' : 'admin';
-
-        return redirect()->route($redirect);
-
-    }
 }

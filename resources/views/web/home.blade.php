@@ -11,7 +11,7 @@
             }
             .content-title {
                 margin: 10px 0px;
-                font-size: 45px;
+                font-size: 35px;
                 text-align: center;
             }
         }
@@ -31,6 +31,7 @@
         }
 
         .boton {
+            background-color: white;
             border: 2px solid lightgrey;
             border-radius: 0px;
             color: gray;

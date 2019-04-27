@@ -38,9 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'MediaController@create'
     ]);
 
-    Route::get('medias/create/present', [
-        'as' => 'medias.create.present',
-        'uses' => 'MediaController@createPresent'
+    Route::get('medias/create/past', [
+        'as' => 'medias.create.past',
+        'uses' => 'MediaController@createPast'
     ]);
 
 

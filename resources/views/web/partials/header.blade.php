@@ -10,7 +10,7 @@
             <div class="menu-box hidden-xs hidden-sm">
                 <ul class="navigation">
                     <li class="current"><a href="#marketing">MARKETING & MANAGEMENT</a></li>
-                    <li><a href="#press">PRESS & COMUNICATION</a></li>
+                    <li><a href="#press">PRESS & COMMUNICATION</a></li>
                     <li><a href="#social">SOCIAL & MEDIA</a></li>
                     <li><a href="#talents">TALENTS & FRIENDS</a></li>
                     <li><a href="#contact">CONTACT & NETWORKS</a></li>

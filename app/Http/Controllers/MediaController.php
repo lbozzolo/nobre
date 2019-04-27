@@ -45,26 +45,20 @@ class MediaController extends AppBaseController
         return view($this->modelPlural.'.index')->with($data);
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
-        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
-        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
-        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
-
-        //dd($data);
+        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->orderByDesc('id')->paginate(100);
+        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->orderByDesc('id')->paginate(100);
 
         return view($this->modelPlural.'.create')->with($data);
     }
 
-    public function createPresent()
+    public function createPast()
     {
-        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
-        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
-        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
-        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
+        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->orderByDesc('id')->paginate(100);
+        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->orderByDesc('id')->paginate(100);
 
-        return view($this->modelPlural.'.create-present')->with($data);
+        return view($this->modelPlural.'.create-past')->with($data);
     }
 
     public function store(CreateMediaRequest $request)

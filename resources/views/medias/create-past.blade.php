@@ -13,7 +13,7 @@
 
             <div class="row">
                 <div class="card-body">
-                @include('medias.partials.create-present')
+                @include('medias.partials.create-past')
                 </div>
             </div>
 

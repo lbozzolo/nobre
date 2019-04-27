@@ -1,3 +1,30 @@
+@section('css')
+
+    <style type="text/css">
+
+        .pagination li span{
+            padding: 5px 10px;
+
+        }
+
+        .pagination li a{
+            padding: 5px 10px;
+
+        }
+
+        .active{
+            background-color: cadetblue;
+            color: white;
+        }
+
+        .disabled{
+            color: lightgrey;
+        }
+
+    </style>
+
+@endsection
+
 <div class="card" id="list-images">
     <div class="card-header">
 
@@ -9,7 +36,7 @@
         <span class="float-right text-secondary" style="padding: 5px; font-size: 1.5em"><i class="mdi mdi-cloud-upload"></i></span>
         <h3>
             Imágenes como 'Present'
-            <a href="{{ route('medias.create') }}" class="btn btn-outline-primary btn-xs ml-3">Cambiar a PAST</a>
+            <a href="{{ route('medias.create.past') }}" class="btn btn-outline-primary btn-xs ml-3">Cambiar a PAST</a>
         </h3>
 
     </div>
@@ -29,6 +56,7 @@
         @endforelse
     </ul>
 
+    {!! $present_thumb->render() !!}
 </div>
 
 <div class="card">
