@@ -56,12 +56,6 @@
         @include('web.partials.sliders')
     @endif
 
-    <div class="container" style="margin-top: 20px;">
-        <div id="ErrResults">
-            @include('vendor.flash.message')
-        </div>
-    </div>
-
     <!--ABOUT START-->
     <div id="marketing" class="content clearfix">
 
