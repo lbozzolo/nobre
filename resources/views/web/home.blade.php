@@ -278,6 +278,10 @@
                                         {!! Form::textarea('text', null, ['class' => 'form-control']) !!}
                                     </div>
 
+                                    <div class="col-lg-12" style="margin-bottom: 20px">
+                                    {!! Recaptcha::render() !!}
+                                    </div>
+
                                     <!-- Submit Field -->
                                     <div class="form-group col-lg-4">
                                         {!! Form::submit('Enviar datos', ['class' => 'boton']) !!}

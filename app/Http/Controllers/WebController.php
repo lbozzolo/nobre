@@ -5,6 +5,7 @@ namespace Nobre\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
 use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 use Nobre\Http\Requests\ContactRequest;
 use Nobre\Http\Requests\CreateApplicantRequest;
@@ -55,6 +56,20 @@ class WebController extends AppBaseController
 
     public function sendDataApplicant(CreateApplicantRequest $request, ApplicantRepo $applicantRepo)
     {
+        $messages = [
+            'g-recaptcha-response.required' => '¡Por favor asegúrese que sea un humano!',
+            'g-recaptcha-response.recaptcha' => '¡Por favor asegúrese que sea un humano!'
+        ];
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|recaptcha',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $input = $request->all();
         $item = $applicantRepo->create($input);
 
@@ -66,6 +81,7 @@ class WebController extends AppBaseController
 
     public function postContacto(ContactRequest $request)
     {
+
         $data = array(
             'name' => $request->name,
             'email' => $request->email,

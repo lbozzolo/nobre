@@ -181,6 +181,7 @@ return [
         // Nobre\Providers\BroadcastServiceProvider::class,
         Nobre\Providers\EventServiceProvider::class,
         Nobre\Providers\RouteServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         /*
          * GUI Interface - Generator Builder...
          */
@@ -239,7 +240,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
-        'Intervention' => Intervention\Image\Facades\Image::class
+        'Intervention' => Intervention\Image\Facades\Image::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
