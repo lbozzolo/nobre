@@ -3,6 +3,7 @@
 namespace Nobre\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
@@ -54,21 +55,27 @@ class WebController extends AppBaseController
         return view('web.works')->with($data);
     }
 
-    public function sendDataApplicant(CreateApplicantRequest $request, ApplicantRepo $applicantRepo)
+    public function sendDataApplicant(Request $request, ApplicantRepo $applicantRepo)
     {
-        $messages = [
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'country' => 'required',
+            'g-recaptcha-response' => 'required|recaptcha',
+        ],[
+            'name.required' => 'El campo nombre es obligatorio',
+            'lastname.required' => 'El campo apellido es obligatorio',
+            'email.required' => 'El campo email es obligatorio',
+            'phone.required' => 'El campo teléfono es obligatorio',
+            'country.required' => 'El campo país es obligatorio',
             'g-recaptcha-response.required' => '¡Por favor asegúrese que sea un humano!',
             'g-recaptcha-response.recaptcha' => '¡Por favor asegúrese que sea un humano!'
-        ];
-        $validator = Validator::make($request->all(), [
-            'g-recaptcha-response' => 'required|recaptcha',
-        ], $messages);
+        ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
+        if ($validator->fails())
+            return Redirect::to(url("/web/#contact"))->withErrors($validator)->withInput();
 
         $input = $request->all();
         $item = $applicantRepo->create($input);

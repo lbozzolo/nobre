@@ -38,4 +38,9 @@ class CreateApplicantRequest extends FormRequest
             'country.required' => 'El campo país es obligatorio',
         ];
     }
+
+//    public function response()
+//    {
+//        return url("/web/#form-wrapper");
+//    }
 }
